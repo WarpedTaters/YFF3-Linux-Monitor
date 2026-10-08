@@ -18,10 +18,10 @@ try:
         array = [            
             f"hostname: {socket.gethostname()}",
             f"kernel: {subprocess.run(["uname", "-r"], capture_output=True, text=True).stdout}", 
-            f"CPU_percent: {psutil.cpu_percent(interval=1.0)}%",
+            f"CPU percent: {psutil.cpu_percent(interval=1.0)}%",
             f"disk usage percent: {psutil.disk_usage('/').percent}%", 
             f"RAM: {psutil.virtual_memory().percent}%", 
-            f"process_amount: {len(psutil.pids())}"]
+            f"process amount: {len(psutil.pids())}"]
         with open("systemdata.json", "w") as file:
             json.dump(array, file, indent=4)
         time.sleep(5)
